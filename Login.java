@@ -17,7 +17,7 @@ public class Login extends Registration {
         members = new Registration();
 
 
-        //creating existing account if program works
+        // existing account for checking if program works correctly
         members.addMembers(new newMember("maya", "maya","maya@gmail.com","abc456","123456"));
 
 
@@ -50,7 +50,7 @@ public class Login extends Registration {
              while (!isUserNameValid(userName = userInput.next())) {
                  System.out.println("Please put valid userName ");
              }
-             System.out.println("Please enter your desired password at least 5 characters long!");
+             System.out.println("Please enter your desired password at least 5 characters long and with atleast a number!");
              while (!isPasswordValid(password = userInput.next())) {
                  System.out.println("Please put valid password");
              }
