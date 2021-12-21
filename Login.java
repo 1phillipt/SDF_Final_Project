@@ -19,8 +19,7 @@ public class Login extends Registration {
 
 
         // existing account for checking if program works correctly if user chooses no to new user
-        members.addMembers(new newMember("maya", "maya","maya@gmail.com","abc456","123456"));
-
+         members.addMembers(new newMember("maya", "maya","maya@gmail.com","phillip","thapa01"));
 
         Scanner userInput = new Scanner(System.in);
         System.out.println("are you a new user (y/n)");
