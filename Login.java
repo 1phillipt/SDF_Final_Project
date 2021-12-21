@@ -17,7 +17,7 @@ public class Login extends Registration {
         members = new Registration();
 
 
-        // existing account for checking if program works correctly
+        // existing account for checking if program works correctly if user chooses no to new user
         members.addMembers(new newMember("maya", "maya","maya@gmail.com","abc456","123456"));
 
 
@@ -33,7 +33,7 @@ public class Login extends Registration {
      while(mainChoice) {
          if (newUser.equalsIgnoreCase("y")) {
              registered = true;
-             System.out.println("Please enter your fname");
+             System.out.println("Please enter your first name");
              while (!isFirstLastNameValid(fName = userInput.next())) {
                  System.out.println("Please put valid first name");
              }
@@ -41,8 +41,8 @@ public class Login extends Registration {
              while (!isFirstLastNameValid(lName = userInput.next())) {
                  System.out.println("Please put valid last name");
              }
-
-             System.out.println("Please enter your email!");
+                
+             System.out.println("Please enter your email!");//also verifies if @ and .com
              while (!isEmailValid(email = userInput.next())) {
                  System.out.println("Please put valid email");
              }
@@ -165,7 +165,10 @@ public class Login extends Registration {
                 }
                 if (containsHashTag) {
                     for (int i = email.indexOf("@"); i < email.length(); i++) {
-                        if (Character.isDigit(email.charAt(i)) || !email.substring(email.length() - 4, email.length()).equalsIgnoreCase(".com")) {
+                        if (Character.isDigit(email.charAt(i)) && !email.substring(email.length() - 4, email.length()).equalsIgnoreCase(".com")
+                                && !email.substring(email.length() - 4, email.length()).equalsIgnoreCase(".org")
+                                && !email.substring(email.length() - 4, email.length()).equalsIgnoreCase(".net"))
+                        {
                             return false;
                         }
                     }
